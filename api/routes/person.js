@@ -110,7 +110,7 @@ router.get("/:ID", async (req, res, next) => {
     const personId = req.params.personId;
     Person.exists({ _id: personId})
     .then((exists) => {
-        if(exists) {
+        if(!exists) {
             return res.status(404).json({
                 message: "This ID does not exist."
             });
