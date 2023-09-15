@@ -48,9 +48,9 @@ router.get ("/", async (req, res, next) => {
 });
 
 //to get person using id 
-router.get("/:personid", async (req, res, next) => {
+router.get("/:personId", async (req, res, next) => {
     const ID= req.params.personId;
-    Person.findById(personid)
+    Person.findById(ID)
     .select("_id name")
     .exec()
     .then((result) => {
@@ -62,7 +62,7 @@ router.get("/:personid", async (req, res, next) => {
             res.status(200).json(response);
         } else{
             res.status(404).json({
-                message: "invalid user id",
+                message: "invalid user ID",
             });
         }
     
