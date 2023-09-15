@@ -82,7 +82,7 @@ router.get("/:ID", async (req, res, next) => {
     const name = req.body.name;
     console.log(name, personId);
 
-    Person.fingdByIdAndUpdate(personId, {name: name})
+    Person.findByIdAndUpdate(personId, {name: name})
     .exec()
     .then((updatedPerson) => {
         if (!updatedPerson) {
