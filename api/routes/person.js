@@ -48,7 +48,7 @@ router.get ("/", async (req, res, next) => {
 });
 
 //to get person using id 
-router.get("/:ID", async (req, res, next) => {
+router.get("/:personid", async (req, res, next) => {
     const ID= req.params.personId;
     Person.findById(ID)
     .select("_id name")
