@@ -106,7 +106,7 @@ router.get("/:ID", async (req, res, next) => {
  });
 
  // delete 
- router.delete("./:personId", (req, res, next) => {
+ router.delete("/:personId", (req, res, next) => {
     const personId = req.params.personId;
     Person.exists({ _id: personId})
     .then((exists) => {
