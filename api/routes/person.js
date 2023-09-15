@@ -6,7 +6,7 @@ const Person = require('../schema/Person')
 // create
 router.post('/', (req, res, next)=>{
     const person = new Person({
-        name : req.body.person
+        name : req.body.name
     })
     person.save()
     .then((result) => {
