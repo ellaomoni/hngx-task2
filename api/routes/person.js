@@ -50,7 +50,7 @@ router.get ("/", async (req, res, next) => {
 //to get person using id 
 router.get("/:personid", async (req, res, next) => {
     const ID= req.params.personId;
-    Person.findById(ID)
+    Person.findById(personid)
     .select("_id name")
     .exec()
     .then((result) => {
