@@ -49,9 +49,9 @@ router.get ("/", async (req, res, next) => {
 
 //to get person using id 
 router.get("/:ID", async (req, res, next) => {
-    const personId= req.params.personId;
+    const ID= req.params.personId;
     Person.findById(ID)
-    .select("_idname")
+    .select("_id name")
     .exec()
     .then((result) => {
         if(result) {
@@ -77,7 +77,7 @@ router.get("/:ID", async (req, res, next) => {
  });
 
  //update person
- router.put("./personId" , (req, res, next) => {
+ router.put("/:personId" , (req, res, next) => {
     const personId = req.params.personId.toString();
     const name = req.body.name;
     console.log(name, personId);
